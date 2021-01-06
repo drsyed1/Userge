@@ -25,16 +25,16 @@ async def check_status(client, message):
 for bot in bots:
     checking = f"<b>⭕️ {bot} Status : ♻️</b>\n\n"
     first_msg += checking
- await msg.edit_text(first_msg, parse_mode="html")
-  send = user_client.send_message(bot, '/start')
-  time.sleep(8) #You can change it if you need to increase Checking time.
-  bot_msg = user_client.get_history(bot, 1)
+    await msg.edit_text(first_msg, parse_mode="html")
+    send = user_client.send_message(bot, '/start')
+    time.sleep(8) #You can change it if you need to increase Checking time.
+    bot_msg = user_client.get_history(bot, 1)
     
-if send.message_id == bot_msg[0].message_id:
-    nice = f"<b>⭕️ {bot} Status : ❌</b>\n\n"
-else:
-    nice = f"<b>⭕️ {bot} Status : ✅</b>\n\n"
-
+    if send.message_id == bot_msg[0].message_id:
+       nice = f"<b>⭕️ {bot} Status : ❌</b>\n\n"
+    else:
+       nice = f"<b>⭕️ {bot} Status : ✅</b>\n\n"
+    
     first_msg = first_msg.replace(checking, nice)
     await msg.edit_text(first_msg,parse_mode="html")
     user_client.read_history(bot)
