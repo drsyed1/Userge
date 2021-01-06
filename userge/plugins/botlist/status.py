@@ -17,11 +17,11 @@ Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", 
                    "<code>BOTSZ</code> : Define All Your Bot's Username With Out @ And Seperate Each With ','\n\n"
 })
 async def bots(message: Message):
-    first_msg = f"<b>List Of All Bots And Working Status In @{UpdatesChannel}"
+    first_msg = f"<b>List Of All Bots And Working Status In @{UpdatesChannel}}\n_______________________________</b>\n\n"
     reply = await message.reply_text(first_msg,parse_mode="html")
     Listed = Botsz
     for bot in Listed:
-        checking = f"<b>⚡ @{bot} Status : Checking...♻️</b>\n\n"
+        checking = f"<b>☘️ @{bot} Status : Checking...♻️</b>\n\n"
         first_msg += checking
         await reply.edit_text(first_msg,parse_mode="html")
         snt = await userge.send_message(bot, '/start')
