@@ -27,8 +27,8 @@ for bot in bots:
     first_msg += checking
 await msg.edit_text(first_msg,parse_mode="html")
 send = user_client.send_message(bot, '/start')
-    time.sleep(8) #You can change it if you need to increase Checking time.
-    bot_msg = user_client.get_history(bot, 1)
+time.sleep(8) #You can change it if you need to increase Checking time.
+bot_msg = user_client.get_history(bot, 1)
     
 if send.message_id == bot_msg[0].message_id:
     nice = f"<b>⭕️ {bot} Status : ❌</b>\n\n"
