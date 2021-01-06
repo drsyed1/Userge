@@ -28,7 +28,7 @@ async def bots(message: Message):
         time.sleep(5)
         msg = await userge.get_history(bot, 1)
         if snt.message_id == msg[0].message_id:
-            nice = f"<b>☘️ @{bot} Status : ❎</b>\n\n"
+            nice = f"<b>☘️ @{bot} Status : ❌</b>\n\n"
         else:
             nice = f"<b>☘️ @{bot} Status : ✅</b>\n\n"
         first_msg = first_msg.replace(checking, nice)
