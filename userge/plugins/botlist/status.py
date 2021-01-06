@@ -22,17 +22,17 @@ async def check_status(client, message):
     msg = await message.reply_text(first_msg, parse_mode="html")
     bots = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "whiteeyegdrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeUltraTonBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot"] #List of your bots
     
-for bot in bots:
-    checking = f"<b>⭕️ {bot} Status : ♻️</b>\n\n"
-    first_msg += checking
-    await msg.edit_text(first_msg, parse_mode="html")
-    send = user_client.send_message(bot, '/start')
-    time.sleep(8) #You can change it if you need to increase Checking time.
-    bot_msg = user_client.get_history(bot, 1)
+    for bot in bots:
+        checking = f"<b>⭕️ {bot} Status : ♻️</b>\n\n"
+        first_msg += checking
+        await msg.edit_text(first_msg, parse_mode="html")
+        send = user_client.send_message(bot, '/start')
+        time.sleep(8) #You can change it if you need to increase Checking time.
+        bot_msg = user_client.get_history(bot, 1)
     
-    if send.message_id == bot_msg[0].message_id:
-       nice = f"<b>⭕️ {bot} Status : ❌</b>\n\n"
-    else:
+        if send.message_id == bot_msg[0].message_id:
+           nice = f"<b>⭕️ {bot} Status : ❌</b>\n\n"
+        else:
        nice = f"<b>⭕️ {bot} Status : ✅</b>\n\n"
     
     first_msg = first_msg.replace(checking, nice)
