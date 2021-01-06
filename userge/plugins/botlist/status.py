@@ -6,10 +6,10 @@ import asyncio
 from datetime import datetime
 from userge import userge, Message
 
-UpdatesChannel = ("@WhiteEyeBotsChat")
-Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "whiteeyegdrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeUltraTonBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot"]
+UpdatesChannel = ("WhiteEyeBots")
+Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "whiteeyegdrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeUltraTonBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot", "@WhiteEyeURLShortnerBot", "@FilmsRequestBot"]
 
-@userge.on_cmd("balive", about={
+@userge.on_cmd("botlist", about={
     'header': "Pings All Defined Bots",
     'description': "<b>Ping and Updates The Status Of All Defined Bots In 'BOTSZ' var</b>\n\n"
                    "<b>Available Vars</b>:\n\n<i><code>UPDATES_CHANNEL</code> : Provide Your Channel Name With @"
@@ -17,20 +17,20 @@ Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", 
                    "<code>BOTSZ</code> : Define All Your Bot's Username With Out @ And Seperate Each With ','\n\n"
 })
 async def bots(message: Message):
-    first_msg = f"<b>Bots Status @{UpdatesChannel}\n°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°</b>\n\n"
+    first_msg = f"<b>List Of All Bots And Working Status In @{UpdatesChannel}"
     reply = await message.reply_text(first_msg,parse_mode="html")
     Listed = Botsz
     for bot in Listed:
-        checking = f"<b>⚡ @{bot} Status : Checking...⌛</b>\n\n"
+        checking = f"<b>⚡ @{bot} Status : Checking...♻️</b>\n\n"
         first_msg += checking
         await reply.edit_text(first_msg,parse_mode="html")
         snt = await userge.send_message(bot, '/start')
         time.sleep(5)
         msg = await userge.get_history(bot, 1)
         if snt.message_id == msg[0].message_id:
-            nice = f"<b>⚡ @{bot} Status : ❎</b>\n\n"
+            nice = f"<b>☘️ @{bot} Status : ❎</b>\n\n"
         else:
-            nice = f"<b>⚡ @{bot} Status : ✅</b>\n\n"
+            nice = f"<b>☘️ @{bot} Status : ✅</b>\n\n"
         first_msg = first_msg.replace(checking, nice)
         await reply.edit_text(first_msg,parse_mode="html")
         await userge.read_history(bot)
