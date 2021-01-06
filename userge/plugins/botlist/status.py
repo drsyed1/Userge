@@ -7,7 +7,7 @@ from datetime import datetime
 from userge import userge, Message
 
 UpdatesChannel = ("WhiteEyeBots")
-Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "whiteeyegdrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeUltraTonBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot", "WhiteEyeURLShortnerBot", "FilmsRequestBot"]
+Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "WhiteEyeGDrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeUltraTonBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot", "WhiteEyeURLShortnerBot", "FilmsRequestBot"]
 
 @userge.on_cmd("botlist", about={
     'header': "Pings All Defined Bots",
@@ -17,7 +17,7 @@ Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", 
                    "<code>BOTSZ</code> : Define All Your Bot's Username With Out @ And Seperate Each With ','\n\n"
 })
 async def bots(message: Message):
-    first_msg = "<b>List Of All Bots And Working Status In @WhiteEyeBots\n_______________________________</b>\n\n"
+    first_msg = "<b>List Of All Bots And Working Status In @WhiteEyeBots</b>\n_______________________________</b>\n\n"
     reply = await message.reply_text(first_msg,parse_mode="html")
     Listed = Botsz
     for bot in Listed:
@@ -36,7 +36,7 @@ async def bots(message: Message):
         await userge.read_history(bot)
     tz = pytz.timezone('Asia/Kolkata')
     time_now  = datetime.utcnow().astimezone(tz=tz).strftime("%I:%M %p - %d %B %Y")
-    first_msg += f"<code>[Updated on : {time_now}]</code>"
+    first_msg += f"<b>[Last Checked And Updated On : {time_now}]</b>"
     await reply.edit_text(first_msg,parse_mode="html")
 
 
