@@ -16,11 +16,11 @@ user_client = pyrogram.Client(
     user_session_string, api_id=api_id, api_hash=api_hash)
 
 
-@pyrogram.Client.on_message(pyrogram.filters.command(["checkstatus"]) # Reply on /checkstatus command
+@pyrogram.Client.on_message(pyrogram.filters.command(["checkstatus"])) # Reply on /checkstatus command
 async def check_status(client, message):
 first_msg = "<b>Bots Status...</b>\n\n"
 msg = await message.reply_text(first_msg, parse_mode="html")
-bots = [["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "whiteeyegdrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeUltraTonBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot"] #List of your bots
+bots = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "whiteeyegdrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeUltraTonBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot"] #List of your bots
 
 for bot in bots:
       checking = f"<b>⭕️ {bot} Status : ♻️</b>\n\n"
