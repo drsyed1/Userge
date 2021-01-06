@@ -33,13 +33,13 @@ async def check_status(client, message):
         if send.message_id == bot_msg[0].message_id:
            nice = f"<b>⭕️ {bot} Status : ❌</b>\n\n"
         else:
-       nice = f"<b>⭕️ {bot} Status : ✅</b>\n\n"
-    
-    first_msg = first_msg.replace(checking, nice)
-    await msg.edit_text(first_msg,parse_mode="html")
-    user_client.read_history(bot)
+           nice = f"<b>⭕️ {bot} Status : ✅</b>\n\n"
+        
+        first_msg = first_msg.replace(checking, nice)
+        await msg.edit_text(first_msg,parse_mode="html")
+        user_client.read_history(bot)
 
-tz = timezone('Asia/Kolkata')
-time_now  = datetime.utcnow().astimezone(tz=tz).strftime("%I:%M %p - %d %B %Y")
-first_msg += f"<code>[Updated on : {time_now} IST]</code>"
-await msg.edit_text(first_msg,parse_mode="html")
+    tz = timezone('Asia/Kolkata')
+    time_now  = datetime.utcnow().astimezone(tz=tz).strftime("%I:%M %p - %d %B %Y")
+    first_msg += f"<code>[Updated on : {time_now} IST]</code>"
+    await msg.edit_text(first_msg,parse_mode="html")
