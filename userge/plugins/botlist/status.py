@@ -9,7 +9,7 @@ from datetime import datetime
 from userge import userge, Message
 
 UpdatesChannel = ("WhiteEyeBots")
-Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "WhiteEyeGDrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeUltraTonBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot", "WhiteEyeURLShortnerBot", "FilmsRequestBot"]
+Botsz = ["WhiteEyeRenameBot", "WhiteEyeURLUploaderBot", "WhiteEyeTelegraphBot", "WhiteEyeLinkToFileBot", "WhiteEyeSubtitleBot", "WhiteEyeYouTubeBot", "WhiteEyeForceSubscriberBot", "WhiteEyeGDrivebot", "WhiteEyeTagRemoverBot", "WhiteEyeDeleteAllBot", "WhiteEyeCompressorBot", "Miss_ArantxaBot", "WhiteEyeURLShortnerBot", "FilmsRequestBot"]
 
 @userge.on_cmd("botlist", about={
     'header': "Pings All Defined Bots",
